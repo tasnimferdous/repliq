@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tracker.apps.TrackerConfig'
+
+    'tracker.apps.TrackerConfig',
+    'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'tracker.User'
