@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block content %}
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
+</style>
+
+<div class="container">
+  <div class = "mx-2">
+    <h2 class="my-2">Tracking information</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>sl</th>
+          <th>Device</th>
+          <th>Employee</th>
+          <th>Company</th>
+          <th>Pre-condition</th>
+          <th>Post-condition</th>
+          <th>Checkout-date</th>
+          <th>Return-date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+        <tr>
+          <td>{{log.id}}</td>
+          <td>{{log.device.name}}</td>
+          <td>{{log.employee.username}}</td>
+          <td>{{log.company.com_name}}</td>
+          <td>{{log.pre_condition}}</td>
+          <td>{{log.post_condition}}</td>
+          <td>{{log.checkout_date}}</td>
+          <td>{{log.return_date}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class = "mx-2">
+    <h2 class="my-2">Employees</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>sl</th>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Address</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for employee in employees %}
+        <tr>
+          <td>{{employee.id}}</td>
+          <td>{{employee.username}}</td>
+          <td>{{employee.designation}}</td>
+          <td>{{employee.email}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock content %}
