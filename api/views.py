@@ -11,7 +11,7 @@ def getRoutes(request):
     routes = [
         {'GET': '/api/companies'},
         {'GET': '/api/companies/id'},
-        {'GET': '/api/companies/id/employee'},
+        {'POST': '/api/companies/id/employee'},
     ]
 
     return Response(routes)
